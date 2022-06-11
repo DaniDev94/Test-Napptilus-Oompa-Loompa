@@ -26,7 +26,7 @@ This commit semantics is a personal implementation based on git flow
 
 - FEAT: (new feature for the user and build script)
 - FIX: (bug fix for the user and build script)
-- DOCS: (changes to the documentation)
+- DOCS: (changes to the documentation readme)
 - STYLE: (styles, create/change classes names, formatting, missing semicolons, spaces in blanc, etc...)
 - REFACTOR: (refactoring production/develop code, for example; renaming a variable)
 - TEST: (adding missing tests, refactoring tests; no production code change)
