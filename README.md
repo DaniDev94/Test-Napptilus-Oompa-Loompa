@@ -31,3 +31,21 @@ This commit semantics is a personal implementation based on git flow
 - REFACTOR: (refactoring production/develop code, for example; renaming a variable)
 - TEST: (adding missing tests, refactoring tests; no production code change)
 - RELEASE: version closure (component, section or project)
+
+## Technologies/methodologies used
+
+- SASS
+
+## Libraries and external docs
+
+```
+normalize.css
+Author: Nicolas Gallagher
+```
+
+```
+node-sass
+Author: Sass
+```
+
+
