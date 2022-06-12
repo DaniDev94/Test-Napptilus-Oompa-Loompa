@@ -12,6 +12,30 @@
             margin: 0 1.7rem 0 7rem;
             width: 40px;
         }
+        &:hover {
+            -webkit-animation: rotate-center 0.7s ease-in-out both;
+            animation: rotate-center 0.7s ease-in-out both;
+            @-webkit-keyframes rotate-center {
+                0% {
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes rotate-center {
+                0% {
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            }
+        }
     }
     &__txt {
         font-weight: 700;
