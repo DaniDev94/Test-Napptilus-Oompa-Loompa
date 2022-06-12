@@ -3,6 +3,7 @@ import willy from "../../assets/images/willy.jpg";
 import "./CharacterCard.scss";
 
 export default function CharacterCard({image, title, gender, job}) {
+  
   return (
     <div className="container">
       <div className="row justify-content-center">
