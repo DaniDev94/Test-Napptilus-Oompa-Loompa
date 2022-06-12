@@ -1,0 +1,30 @@
+.b-main-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2rem 1rem;
+    &__title {
+        font-weight: 500;
+        font-size: 26px;
+        @media (min-width: 576px) {
+            font-size: 33px;
+        }
+        @media (min-width: 992px) {
+            font-size: 40px;
+        }
+        @media (min-width: 1200px) {
+            font-size: 47px;
+        }
+    }
+    &__subtitle {
+        font-size: 19px;
+        color: rgb(98, 98, 98);
+        @media (min-width: 576px) {
+            font-size: 24px;
+        }
+        @media (min-width: 992px) {
+            font-size: 29.1px;
+        }
+        @media (min-width: 1200px) {
+            font-size: 34px;
+        }
+    }
+}

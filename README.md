@@ -34,6 +34,7 @@ This commit semantics is a personal implementation based on git flow
 
 ## Technologies/methodologies used
 
+- Redux
 - SASS
 - BEM
 
@@ -57,6 +58,16 @@ Author: React-bootstrap
 ```
 react-router-dom
 Author: Remix
+```
+
+```
+redux, react-redux and redux-thunk
+Author: Redux
+```
+
+```
+redux-devtools-extensio
+Author: Mihail Diordiev
 ```
 
 
