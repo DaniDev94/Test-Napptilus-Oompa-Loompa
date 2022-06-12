@@ -35,6 +35,7 @@ This commit semantics is a personal implementation based on git flow
 ## Technologies/methodologies used
 
 - SASS
+- BEM
 
 ## Libraries and external docs
 
@@ -46,6 +47,11 @@ Author: Nicolas Gallagher
 ```
 node-sass
 Author: Sass
+```
+
+```
+react-bootstrap
+Author: React-bootstrap
 ```
 
 

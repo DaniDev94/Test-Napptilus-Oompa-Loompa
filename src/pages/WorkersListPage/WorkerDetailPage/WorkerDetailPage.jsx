@@ -1,9 +1,9 @@
-import React from 'react';
-import './WorkerDetailPage.scss';
+import React from "react";
+import "./WorkerDetailPage.scss";
 
-export default function WorkerDetailPage() {
+export default function WorkersListPage() {
     return (
-        <>
-        </>
-    )
-};
+      <>
+      </>
+    );
+}
