@@ -61,13 +61,18 @@ Author: Remix
 ```
 
 ```
-redux, react-redux and redux-thunk
+redux, reduxjs/toolkit, react-redux and redux-thunk
 Author: Redux
 ```
 
 ```
 redux-devtools-extensio
 Author: Mihail Diordiev
+```
+
+```
+axios
+Author: Axios
 ```
 
 
