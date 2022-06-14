@@ -1,10 +1,11 @@
 import * as actions from "../actions/charactersActions";
 
 export const initialState = {
-  characters: [],
   page: 1,
+  limit: false,
   errors: false,
   loading: false,
+  characters: [],
 };
 
 export default function charactersReducer(state = initialState, action) {
@@ -19,6 +20,8 @@ export default function charactersReducer(state = initialState, action) {
         loading: false,
         errors: false,
       };
+    case actions.GET_LIMITCHARACTERSLIST:
+      return { ...state, limit: true, loading: false, errors: false };
     case actions.GET_CHARACTERS_ERROR:
       return { ...state, loading: false, errors: true };
     default:
