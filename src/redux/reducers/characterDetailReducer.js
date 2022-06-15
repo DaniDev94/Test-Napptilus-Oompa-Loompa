@@ -11,7 +11,12 @@ export default function characterDetailReducer(state = initialState, action) {
     case actions.GET_CHARACTERDETAIL:
       return { ...state, loading: true };
     case actions.GET_CHARACTERDETAIL_OK:
-      return { ...state, characterDetail: action.payload, loading: false, errors: false };
+      return {
+        ...state,
+        characterDetail: action.payload,
+        errors: false,
+        loading: false,
+      };
     case actions.GET_CHARACTERDETAIL_ERROR:
       return { ...state, loading: false, errors: true };
     default:

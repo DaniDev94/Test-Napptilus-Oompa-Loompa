@@ -19,14 +19,17 @@ export const actionGetCharacterDetailError = () => ({
   type: GET_CHARACTERDETAIL_ERROR,
 });
 
-
 export function getCharactersDetail(characterId) {
   return async (dispatch) => {
     dispatch(actionGetCharacterDetail());
     try {
       const endPoint = "https://2q2woep105.execute-api.eu-west-1.amazonaws.com/napptilus/oompa-loompas/" + characterId;
       const res = await axios.get(endPoint);
-      dispatch(actionGetCharacterDetailOk(res));
+      if (res && res.status && res.status === 200) {
+        dispatch(actionGetCharacterDetailOk(res.data));
+      } else {
+        dispatch(actionGetCharacterDetailError());
+      }
     } catch (err) {
       console.error(err);
       dispatch(actionGetCharacterDetailError());

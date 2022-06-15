@@ -12,7 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/">
           <Route index element={<WorkersListPage></WorkersListPage>} />
-          <Route path=":id" element={<WorkersDetailPage></WorkersDetailPage>} />
+          <Route path="/detail/:characterId" element={<WorkersDetailPage></WorkersDetailPage>} />
         </Route>
       </Routes>
     </div>

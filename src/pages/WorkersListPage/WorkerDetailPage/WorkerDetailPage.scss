@@ -1,0 +1,37 @@
+p,
+h1 {
+    margin: 0 !important;
+}
+
+.m-custom {
+    margin: 3rem 1rem 5rem 1rem;
+    @media (min-width: 1152px) {
+        margin: 5rem 3rem 3rem 3rem;
+    }
+}
+
+.b-content-img {
+    width: 40rem;
+    height: 20rem;
+    margin-bottom: 1rem;
+    @media (min-width: 1152px) {
+        height: 22rem;
+        margin-bottom: 0;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.b-content-text {
+    width: 100%;
+    max-width: 30rem !important;
+}
+
+.custom-txt {
+    color: rgb(98, 98, 98);
+    font-weight: 500;
+}
