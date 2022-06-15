@@ -82,6 +82,7 @@ Next I will briefly explain the points to take into account, errors and possible
 - BEM
 - SASS
 - Bootstrap
+- Mobile first
 - Redux
 - Thunk
 
