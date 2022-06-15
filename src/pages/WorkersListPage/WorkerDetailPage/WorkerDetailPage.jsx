@@ -1,21 +1,24 @@
+//React
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+//Redux
+import { connect } from "react-redux";
+import { getCharactersDetail } from "../../../redux/actions/characterDetailActions";
+//Imports
 import ReactLoading from "react-loading";
 import oompaError from "../../../assets/images/error/oompa-error.png";
-import { getCharactersDetail } from "../../../redux/actions/characterDetailActions";
 import error from "../../../assets/images/error/character-error.jpg";
 import "./WorkerDetailPage.scss";
 
 const WorkersDetailPage = ({ dispatch, characterDetail, errors, loading }) => {
   const params = useParams();
   const characterId = params.characterId;
-  console.log(characterDetail);
 
   useEffect(() => {
     dispatch(getCharactersDetail(characterId));
   }, [dispatch, characterId]);
+
   return (
     <>
       {loading === true ? (
@@ -27,25 +30,14 @@ const WorkersDetailPage = ({ dispatch, characterDetail, errors, loading }) => {
           {errors === true ? (
             <div className="container">
               <div className="b-api-error">
-                <p className="b-api-error__txt">
-                  Ups! it seems that an error has occurred, our oompa loompa's are working on it to solve it
-                </p>
-                <img
-                  onClick={() => window.location.reload()}
-                  className="b-api-error__img"
-                  src={oompaError}
-                  alt="oompa-error"
-                />
+                <p className="b-api-error__txt">Ups! it seems that an error has occurred, our oompa loompa's are working on it to solve it.</p>
+                <img onClick={() => window.location.reload()} className="b-api-error__img" src={oompaError} alt="oompa-error"/>
               </div>
             </div>
           ) : (
             <div className="d-flex justify-content-center align-items-center flex-wrap m-custom">
               <div className="b-content-img">
-                <img
-                  className="b-content-img__img"
-                  src={characterDetail.image ? characterDetail.image : error}
-                  alt="not-found"
-                />
+                <img className="b-content-img__img" src={characterDetail.image ? characterDetail.image : error} alt="not-found"/>
               </div>
               <div class="card border-0 b-content-text">
                 <div class="card-body py-2 my-1 mx-1">
@@ -56,9 +48,7 @@ const WorkersDetailPage = ({ dispatch, characterDetail, errors, loading }) => {
                     {characterDetail.gender === "F" ? "Woman" : "Man"}
                   </p>
                   <p class="card-subtitle text-xl-start mb-3 custom-txt">{characterDetail.profession}</p>
-                  <p
-                    class="card-text text-xl-start"
-                    dangerouslySetInnerHTML={{ __html: characterDetail.description }}
+                  <p class="card-text text-xl-start" dangerouslySetInnerHTML={{ __html: characterDetail.description }}
                   ></p>
                 </div>
               </div>

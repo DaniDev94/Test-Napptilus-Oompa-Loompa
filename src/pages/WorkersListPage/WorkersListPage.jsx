@@ -1,10 +1,13 @@
+//React
 import React, { useEffect, useState } from "react";
-import CharacterCard from "../../components/CharacterCard/CharacterCard";
-import FilterInput from "../../components/FilterInput/FilterInput";
-import ReactLoading from "react-loading";
-import oompaError from "../../assets/images/error/oompa-error.png";
+//Redux
 import { connect } from "react-redux";
 import { getCharacters } from "../../redux/actions/charactersActions.js";
+//Imports
+import CharacterCard from "../../components/CharacterCard/CharacterCard";
+import FilterInput from "../../components/FilterInput/FilterInput";
+import oompaError from "../../assets/images/error/oompa-error.png";
+import ReactLoading from "react-loading";
 import "./WorkersListPage.scss";
 
 const WorkersListPage = ({ dispatch, page, characters, errors, loading }) => {
@@ -12,7 +15,7 @@ const WorkersListPage = ({ dispatch, page, characters, errors, loading }) => {
   const [newPage, setNewPage] = useState(page);
   const [search, setSearch] = useState("");
 
-  //search filters
+  //Search filters
   const searcher = (e) => {
     setSearch((prev) => (prev = e.target.value));
   };
@@ -43,15 +46,8 @@ const WorkersListPage = ({ dispatch, page, characters, errors, loading }) => {
           {errors === true ? (
             <div className="container">
               <div className="b-api-error">
-                <p className="b-api-error__txt">
-                  Ups! it seems that an error has occurred, our oompa loompa's are working on it to solve it
-                </p>
-                <img
-                  onClick={() => window.location.reload()}
-                  className="b-api-error__img"
-                  src={oompaError}
-                  alt="oompa-error"
-                />
+                <p className="b-api-error__txt">Ups! it seems that an error has occurred, our oompa loompa's are working on it to solve it.</p>
+                <img onClick={() => window.location.reload()} className="b-api-error__img" src={oompaError} alt="oompa-error"/>
               </div>
             </div>
           ) : (
@@ -66,32 +62,20 @@ const WorkersListPage = ({ dispatch, page, characters, errors, loading }) => {
               </div>
               <div className="b-content-btn">
                 {newPage <= 1 ? (
-                  <button
-                    className="disabled btn btn-dark b-content-btn__btn mt-1"
-                    onClick={() => setNewPage((prev) => prev - 1)}
-                  >
+                  <button className="disabled btn btn-dark b-content-btn__btn mt-1" onClick={() => setNewPage((prev) => prev - 1)}>
                     Back
                   </button>
                 ) : (
-                  <button
-                    className="btn btn-dark b-content-btn__btn mt-1"
-                    onClick={() => setNewPage((prev) => prev - 1)}
-                  >
+                  <button className="btn btn-dark b-content-btn__btn mt-1" onClick={() => setNewPage((prev) => prev - 1)}>
                     Back
                   </button>
                 )}
                 {newPage >= 20 ? (
-                  <button
-                    className="disabled btn btn-dark b-content-btn__btn mt-1"
-                    onClick={() => setNewPage((prev) => prev + 1)}
-                  >
+                  <button className="disabled btn btn-dark b-content-btn__btn mt-1" onClick={() => setNewPage((prev) => prev + 1)}>
                     Next
                   </button>
                 ) : (
-                  <button
-                    className="btn btn-dark b-content-btn__btn mt-1"
-                    onClick={() => setNewPage((prev) => prev + 1)}
-                  >
+                  <button className="btn btn-dark b-content-btn__btn mt-1" onClick={() => setNewPage((prev) => prev + 1)}>
                     Next
                   </button>
                 )}

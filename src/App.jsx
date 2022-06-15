@@ -1,9 +1,11 @@
+//React
 import React from "react";
-import Header from "./components/Header/Header";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
+//Imports
+import Header from "./components/Header/Header";
 import WorkersListPage from "./pages/WorkersListPage/WorkersListPage";
 import WorkersDetailPage from "./pages/WorkersListPage/WorkerDetailPage/WorkerDetailPage";
+import "./App.css";
 
 export default function App() {
   return (

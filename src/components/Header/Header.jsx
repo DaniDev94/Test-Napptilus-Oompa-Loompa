@@ -1,7 +1,9 @@
+//React
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Header.scss";
+//Imports
 import Oompa from "../../assets/images/icons/oompa-icon.png";
+import "./Header.scss";
 
 export default function Header() {
   return (
