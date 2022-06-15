@@ -7,9 +7,9 @@ export default function CharacterCard({ characters }) {
   return (
     <div className="container">
       <div className="row justify-content-center">
-        {characters.map((character, index) => (
-          <div className="col-lg-4 col-md-6 col-sm-10 my-4">
-            <Link className="text-decoration-none" to={`detail/${character.id}`} key={index}>
+        {characters.map((character) => (
+          <div key={character.id} className="col-lg-4 col-md-6 col-sm-10 my-4">
+            <Link className="text-decoration-none" to={`detail/${character.id}`}>
               <div className="card border-0 b-content-card">
                 <img
                   className="card-img-top b-content-card__img"

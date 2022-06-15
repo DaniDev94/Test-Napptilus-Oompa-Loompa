@@ -8,7 +8,25 @@ import { getCharacters } from "../../redux/actions/charactersActions.js";
 import "./WorkersListPage.scss";
 
 const WorkersListPage = ({ dispatch, page, characters, errors, loading }) => {
+  //Hooks
   const [newPage, setNewPage] = useState(page);
+  const [search, setSearch] = useState("");
+
+  //search filters
+  const searcher = (e) => {
+    setSearch((prev) => (prev = e.target.value));
+  };
+
+  let searchResults = [];
+  if (!search) {
+    searchResults = characters;
+  } else {
+    searchResults = characters.filter((data) =>
+        (data.first_name.toLowerCase() + " " + data.last_name.toLowerCase()).includes(search.toLowerCase()) ||
+        data.profession.toLowerCase().includes(search.toLowerCase()) ||
+        (data.gender === "F"?  search.toLowerCase().indexOf('woman') === 0 : search.toLowerCase().indexOf('man') === 0)
+    );
+  }
 
   useEffect(() => {
     dispatch(getCharacters(newPage));
@@ -38,13 +56,13 @@ const WorkersListPage = ({ dispatch, page, characters, errors, loading }) => {
             </div>
           ) : (
             <>
-              <FilterInput></FilterInput>
+              <FilterInput value={search} searchEvent={searcher}></FilterInput>
               <div className="b-main-text" id="scrollableDiv">
                 <h2 className="b-main-text__title m-0">Find your Oompa Loompa</h2>
                 <p className="b-main-text__subtitle m-0 text-nowrap">There are more than 100K</p>
               </div>
               <div className="d-flex flex-column m-custom-list">
-                <CharacterCard characters={characters}></CharacterCard>
+                <CharacterCard characters={searchResults ? searchResults : characters}></CharacterCard>
               </div>
               <div className="b-content-btn">
                 {newPage <= 1 ? (
