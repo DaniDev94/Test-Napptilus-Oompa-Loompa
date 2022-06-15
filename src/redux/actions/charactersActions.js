@@ -3,7 +3,8 @@ import axios from "axios";
 //Actions type
 export const GET_CHARACTERS = "GET_CHARACTERS";
 export const GET_CHARACTERS_OK = "GET_CHARACTERS_OK";
-export const GET_LIMITCHARACTERSLIST = "GET_LIMITCHARACTERSLIST";
+export const GET_INITIALCHARACTERLIMIT = "GET_INITIALCHARACTERLIMIT";
+export const GET_FINALCHARACTERLIMIT = "ET_FINALCHARACTERLIMIT";
 export const GET_CHARACTERS_ERROR = "GET_CHARACTERS_ERROR";
 
 //Action creators
@@ -16,8 +17,12 @@ export const actionGetCharactersOk = (characters, page, totalPage) => ({
   payload: { characters, page, totalPage },
 });
 
-export const actionLimitCharactersList = () => ({
-  type: GET_LIMITCHARACTERSLIST,
+export const actionInitialCharacterLimit = () => ({
+  type: GET_INITIALCHARACTERLIMIT,
+});
+
+export const actionFinalCharacterLimit = () => ({
+  type: GET_FINALCHARACTERLIMIT,
 });
 
 export const actionGetCharactersError = () => ({
@@ -32,9 +37,6 @@ export function getCharacters(page) {
       const res = await axios.get(endPoint);
       if (res && res.status && res.status === 200) {
         dispatch(actionGetCharactersOk(res.data.results, res.data.current, res.data.total));
-        if ((page === 0) || (page === 20)) {
-          dispatch(actionLimitCharactersList());
-        }
       } else {
         dispatch(actionGetCharactersError());
       }
